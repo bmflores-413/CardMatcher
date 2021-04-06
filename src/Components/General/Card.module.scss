@@ -1,0 +1,16 @@
+.cardWrapper {
+  background: white;
+  border-radius: 6px;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  .cardTitle {
+    text-align: center;
+  }
+  .cardContent {
+    border: 3px #014039 solid;
+    border-radius: 6px;
+    padding: 20px;
+    color: #014039;
+  }
+}

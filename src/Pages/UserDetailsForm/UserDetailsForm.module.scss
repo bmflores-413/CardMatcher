@@ -1,0 +1,8 @@
+.formInputGroup {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  .formInputGroupItem {
+    padding-right: 20px;
+  }
+}

@@ -1,0 +1,47 @@
+@use 'react-date-picker/dist/DatePicker.css';
+
+.label {
+  margin-bottom: 10px;
+}
+
+.formElement {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.formInput {
+  border: 3px #014039 solid;
+  border-radius: 3px;
+  padding: 10px;
+}
+
+.reactSelect {
+  width: 170px;
+  .react-select__control {
+    background: pink;
+  }
+}
+
+.formButton {
+  border-radius: 3px;
+  padding: 10px;
+  background-color: #014039;
+  color: white;
+  border: none;
+  width: 170px;
+}
+
+.checkboxWithLabel {
+  display: flex;
+  .checkboxWrapper {
+    input {
+      border: 3px #014039 solid;
+    }
+  }
+}
+
+:global(.react-date-picker__wrapper) {
+  border: 3px #014039 solid;
+  border-radius: 3px;
+  padding: 5px;
+}
