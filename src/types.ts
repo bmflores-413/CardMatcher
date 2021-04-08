@@ -43,11 +43,11 @@ export enum UserTitle {
 }
 
 export type User = {
-  title: UserTitle,
+  title: UserTitle | null,
   firstName: string,
   lastName: string,
-  dateOfBirth: Date,
-  occupation: Occupation,
+  dateOfBirth: Date | null,
+  occupation: Occupation | null,
   address: Address,
   annualIncome: number
 }

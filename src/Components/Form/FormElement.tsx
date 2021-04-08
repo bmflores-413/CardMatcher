@@ -1,5 +1,5 @@
+import classNames from "classnames"
 import { ReactNode } from "react"
-import { classNames } from "react-select/src/utils"
 import styles from './Form.module.scss'
 
 export interface IFormElementProps {
@@ -11,7 +11,7 @@ export interface IFormElementProps {
 
 export const FormElement = ({children, labelText, className, name}: IFormElementProps) => {
     return (
-      <div className={className}>
+      <div className={classNames(className, styles.formElementWrapper)}>
         <label className={styles.label} htmlFor={name}>{labelText}</label>
         <div className={styles.formElement}>{children}</div>
       </div>

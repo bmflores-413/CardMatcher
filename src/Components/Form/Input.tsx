@@ -15,9 +15,11 @@ export const Input = ({ name, labelText, type, className }: IInputProps) => {
   const onChangeText = (event: React.FormEvent<HTMLInputElement>) => {
     helpers.setValue(event.currentTarget.value)
   }
+  const hasError = meta.touched && meta.error !== undefined;
   return (
     <FormElement labelText={labelText} className={className} name={name}>
-      <input name={name} value={field.value} onChange={onChangeText} className={styles.formInput} onBlur={()=>helpers.setTouched(true)} type={type}/>
+      <input name={name} value={field.value} onChange={onChangeText} className={hasError ? styles.formInputError : styles.formInput} onBlur={()=>helpers.setTouched(true)} type={type}/>
+      {hasError && <div className={styles.fieldRequiredMessage}>{meta.error}</div>}
     </FormElement>
   )
 };

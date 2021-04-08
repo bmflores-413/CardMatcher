@@ -17,14 +17,6 @@ interface IDropdownProps {
   className?: string,
 }
 
-const customStyles = {
-  control: () => ({
-    border: '3px #014039 solid',
-    borderRadius: '3px',
-    display: 'flex'
-  }),
-}
-
 export const Dropdown = ({labelText, items, name, className}: IDropdownProps) => {
   const [field, meta, helpers] = useField(name);
     
@@ -33,11 +25,20 @@ export const Dropdown = ({labelText, items, name, className}: IDropdownProps) =>
     helpers.setValue(item.value);
   };
 
+  const hasError = meta.touched && meta.error !== undefined;
+
+  const customStyles = {
+    control: () => ({
+      border: hasError ? '3px red solid' : '3px #014039 solid',
+      borderRadius: '3px',
+      display: 'flex',
+      width: '170px'
+    }),
+  }
   return (
     <FormElement labelText={labelText} className={className} name={name}>
-      <div className={styles.reactSelect}>
-        <Select<ISelectItem> options={items} name={name} values={[field.value]} placeholder={'Select'} onChange={setItem} styles={customStyles}/>
-      </div>
+      <Select<ISelectItem> options={items} name={name} values={[field.value]} placeholder={'Select'} onChange={setItem} styles={customStyles}/>
+      {hasError && <div className={styles.fieldRequiredMessage}>{meta.error}</div>}
     </FormElement>
   )
 }

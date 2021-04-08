@@ -25,12 +25,12 @@ export const UserCardMatches = () => {
   }
 
   return (
-    <PageLayout>
+    <PageLayout title={user ? `Hello, ${user.firstName}!` : 'Hello!'}>
       <Card title={PAGE_TITLE}>
         <ul className={styles.matchesList}>
           {userCardMatches.map((card)=><MatchesListItem card={card} onCardSelected={onCardSelected} key={card.name}/>)}
         </ul>
-        <Button onClick={onClickViewSelectedCards}>View Selected Cards</Button>
+        <Button onClick={onClickViewSelectedCards} disabled={!selectedCards.length}>View Selected Cards</Button>
       </Card>
     </PageLayout>
   )

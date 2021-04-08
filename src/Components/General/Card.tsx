@@ -5,7 +5,7 @@ export const Card = ({children, title}:{children: ReactNode, title?: ReactNode})
   return(
     <div className={styles.cardWrapper} data-testid={'ui-card'}>
       <div className={styles.cardContent}>
-        <h3 className={styles.cardTitle}>{title}</h3>
+        <h2 className={styles.cardTitle}>{title}</h2>
         {children}
       </div>
     </div>

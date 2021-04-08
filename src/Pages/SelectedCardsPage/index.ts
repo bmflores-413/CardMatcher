@@ -1,1 +1,1 @@
-export {SelectedCardsPage} from './SelectedCardsPage'
+export { SelectedCardsPage } from './SelectedCardsPage'

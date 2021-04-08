@@ -6,9 +6,19 @@ import styles from './Form.module.scss';
 interface IButtonProps {
   type?: "button" | "submit" | "reset" | undefined; 
   onClick?: ()=>void, children?: ReactNode;
-  className?: string
+  className?: string;
+  disabled?: boolean;
 }
 
-export const Button = ({type, onClick, children, className}:IButtonProps) => {
-    return <button type={type} className={classNames(styles.formButton, className)} onClick={onClick}>{children}</button>
+export const Button = ({type, onClick, children, disabled = false, className}:IButtonProps) => {
+  return (
+    <button 
+      type={type}
+      className={classNames(styles.formButton, className)}
+      onClick={onClick}
+      disabled={disabled}
+    >
+      {children}
+    </button>
+  )
 }

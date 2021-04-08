@@ -1,1 +1,1 @@
-export {UserCardMatches} from './UserCardMatches'
+export { UserCardMatches } from './UserCardMatches'
